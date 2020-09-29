@@ -2,13 +2,10 @@ package com.bridgelabz.UserRegistrationTest;
 
 import java.util.regex.Pattern;
 
-/**
- * Hello world!
- *
- */
 public class UserRegistration 
 {
 	private static final String FIRST_NAME_PATTERN="^[A-Z][a-z]{2,}";
+	private static final String LAST_NAME_PATTERN="^[A-Z][a-z]{2,}";
 	
     public void printWelcome()
     {
@@ -17,6 +14,11 @@ public class UserRegistration
     
     public boolean checkFirstName(String fName) {
     	Pattern pattern = Pattern.compile(FIRST_NAME_PATTERN);
+    	return pattern.matcher(fName).matches();
+    }
+    
+    public boolean checkLastName(String fName) {
+    	Pattern pattern = Pattern.compile(LAST_NAME_PATTERN);
     	return pattern.matcher(fName).matches();
     }
 }
